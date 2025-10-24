@@ -144,6 +144,9 @@ def main():
      4) Catch-all: move leftovers to '10_Unsorted'.
     Provide logs / summary of changes.
     """
+
+    print("--- The Archivist: File Sorting Script ---")
+    print("Starting sorting process...")
     # 1) Get and validate source directory
     # source_dir = get_source_directory()
     # 2) Ensure standardized category folders exist
