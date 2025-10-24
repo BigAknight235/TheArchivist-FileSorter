@@ -379,7 +379,7 @@ def main():
     # --- 1) Preparation ---
     try:
         source_dir = get_source_directory()
-        printf(f"Source directory set to: {source_dir}")
+        print(f"Source directory set to: {source_dir}")
         
         print("1. Ensuring All the Standardized Category Folders Exist...")
         ensure_category_folders(source_dir, CENTRAL_CATEGORIES)
