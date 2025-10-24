@@ -158,7 +158,7 @@ def main():
     # 5) Catch-All
     # move_to_unsorted(source_dir, unsorted_key="10_Unsorted")
     # 6) Summary / optional dry-run support
-    raise NotImplementedError
+    print("Sorting process completed.")
 
 
 if __name__ == "__main__":
