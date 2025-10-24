@@ -147,18 +147,34 @@ def main():
 
     print("--- The Archivist: File Sorting Script ---")
     print("Starting sorting process...")
-    # 1) Get and validate source directory
-    # source_dir = get_source_directory()
-    # 2) Ensure standardized category folders exist
-    # ensure_category_folders(source_dir, CENTRAL_CATEGORIES)
-    # 3) Phase 1
+    # --- 1) Preparation ---
+    try:
+        source_dir = get_source_directory()
+        printf(f"Source directory set to: {source_dir}")
+        
+        print("1. Ensuring All the Standardized Category Folders Exist...")
+        ensure_category_folders(source_dir, CENTRAL_CATEGORIES)
+    except NotImplementedError:
+      print("SETUP ERROR: Complete the 'get_source_directory' and 'ensure_category_folders' functions first.")
+      return
+    except Exception as e:
+        print(f"an ERROR occurred during setup: {e}")
+        return
+      
+    # --- 2) Phase 1: Standardize Folders (Relabel/Create/Move) ---
+    print("2. Phase 1:Standardizing Existing Folders...")
     # standardize_folders(source_dir, CENTRAL_CATEGORIES)
-    # 4) Phase 2
+    
+    # --- 3) Phase 2: Sort Files & New Items ---
+    print("3. Phase 2: Sorting Files and New Items...")
     # sort_items(source_dir, CENTRAL_CATEGORIES)
-    # 5) Catch-All
+    
+    # --- 4) Catch-All ---
+    print("4. Moving Remaining Items to '10_Unsorted'...")
     # move_to_unsorted(source_dir, unsorted_key="10_Unsorted")
+    
     # 6) Summary / optional dry-run support
-    print("Sorting process completed.")
+    print("\n--- The Archivist: Operation Complete ---")
 
 
 if __name__ == "__main__":
